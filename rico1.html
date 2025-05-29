@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rico 1</title>
+    <link rel="icon" href="../phantom_games_logo.png" type="image/png"> 
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Futuristic Color Palette for Game Page */
+            --primary-bg-game: #1a1a2e;
+            --header-footer-bg-game: #0f0f1d;
+            --header-footer-text-game: #e0e0e0;
+            --content-bg-game: #2a2a4a;
+            --content-text-game: #c0c0e0;
+            --accent-electric-blue-game: #00FFFF;
+            --accent-deep-purple-game: #8A2BE2;
+            --shadow-glow-blue-game: rgba(0, 255, 255, 0.3);
+            --shadow-glow-purple-game: rgba(138, 43, 226, 0.4);
+            --text-glow-game: 0 0 5px var(--accent-electric-blue-game), 0 0 10px var(--accent-electric-blue-game);
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--primary-bg-game);
+            color: var(--content-text-game);
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.6;
+        }
+        header {
+            background-color: var(--header-footer-bg-game);
+            color: var(--header-footer-text-game);
+            padding: 30px 0;
+            box-shadow: 0 2px 15px var(--shadow-glow-blue-game);
+            border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+        }
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            text-shadow: var(--text-glow-game);
+        }
+        .container {
+            padding: 30px;
+            max-width: 700px;
+            margin: 30px auto;
+            background-color: var(--content-bg-game);
+            border-radius: 12px;
+            box-shadow: 0 0 15px var(--shadow-glow-purple-game); /* Adjusted shadow for containers */
+            flex-grow: 1;
+            text-align: left;
+            border: 1px solid rgba(138, 43, 226, 0.1);
+        }
+        .container p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: var(--content-text-game);
+        }
+        .game-details img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            box-shadow: 0 0 15px var(--shadow-glow-blue-game); /* Image glow */
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid rgba(0, 255, 255, 0.1);
+        }
+
+        .itch-embed-container {
+            text-align: center;
+            margin-bottom: 25px;
+            padding: 10px; /* Inner padding for the container */
+            border-radius: 8px;
+            background-color: rgba(0, 0, 0, 0.2); /* Slightly transparent dark background for embed */
+            box-shadow: 0 0 10px var(--shadow-glow-purple-game); /* Glow around embed */
+            border: 1px solid rgba(138, 43, 226, 0.1);
+        }
+        .itch-embed-container iframe {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .game-details ul {
+            list-style: none; /* Remove default bullet points */
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        .game-details ul li {
+            position: relative;
+            padding-left: 25px; /* Space for custom bullet */
+            margin-bottom: 10px;
+            color: var(--content-text-game);
+            font-size: 1.05em;
+        }
+
+        .game-details ul li::before {
+            content: '\2022'; /* Unicode bullet point */
+            color: var(--accent-electric-blue-game); /* Custom bullet color */
+            font-size: 1.2em;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+            text-shadow: 0 0 5px var(--accent-electric-blue-game); /* Bullet glow */
+        }
+        
+        .game-info {
+            font-size: 1.05em;
+            margin-top: 25px;
+            text-align: center; /* Center the game info text */
+            line-height: 1.5;
+            color: var(--content-text-game);
+        }
+
+        .game-info a {
+            color: var(--accent-electric-blue-game);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        .game-info a:hover {
+            color: var(--accent-deep-purple-game);
+            text-shadow: 0 0 5px var(--accent-electric-blue-game);
+        }
+
+        .back-link {
+            margin-top: 30px;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .back-link a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--accent-deep-purple-game);
+            color: var(--header-footer-text-game);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease, color 0.3s ease;
+            font-weight: 600;
+            text-shadow: 0 0 5px var(--accent-deep-purple-game);
+            border: 1px solid var(--accent-deep-purple-game);
+        }
+        .back-link a:hover {
+            background-color: transparent;
+            color: var(--accent-electric-blue-game);
+            box-shadow: 0 0 15px var(--shadow-glow-blue-game);
+            transform: translateY(-3px);
+            text-shadow: var(--text-glow-game);
+            border-color: var(--accent-electric-blue-game);
+        }
+        footer {
+            margin-top: auto;
+            padding: 20px 0;
+            background-color: var(--header-footer-bg-game);
+            color: var(--header-footer-text-game);
+            font-size: 0.9em;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Rico 1: The Quest Begins</h1>
+        <p>A thrilling adventure from Phantom Games</p>
+    </header>
+
+    <div class="container">
+        <div class="game-details">
+            <img src="rico1_thumbnail.jpg" alt="Rico 1 Game Thumbnail">
+            
+            <div class="itch-embed-container">
+                <iframe frameborder="0" src="https://itch.io/embed/3567660" width="552" height="167">
+                    <a href="https://phantom-official-store.itch.io/rico-1">Rico 1 by Phantom</a>
+                </iframe>
+            </div>
+            
+            <p>Join Rico, a brave red slime cube, on a thrilling platforming adventure inspired by classic Mario-style games! Jump, bounce, and defeat enemies across colorful levels filled with mystery boxes, coins, and surprises. Unlock power-ups like fireballs, dodge tricky traps, and conquer each stage in your quest to reach the goal. With retro pixel art and smooth controls, this action-packed journey is perfect for fans of old-school platformers!</p>
+            
+            <h3>Key Features:</h3>
+            <ul>
+                <li>Engaging storyline with multiple endings</li>
+                <li>Dynamic combat system</li>
+                <li>Stunning handcrafted environments</li>
+                <li>Challenging puzzles and riddles</li>
+                <li>Rich lore and character development</li>
+            </ul>
+            
+            <p>Get ready to define your legend in Rico 1!</p>
+
+            <div class="game-info">
+                <p>Rico 1 is made by Phantom using GDevelop. <br>
+                Also play it on <a href="https://gd.games/phantom-games/rico-1" target="_blank">gd.games/phantom-games/rico-1</a></p>
+            </div>
+        </div>
+
+        <div class="back-link">
+            <p><a href="index.html">Back to Phantom Games Home</a></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Phantom Games. All rights reserved.</p>
+    </footer>
+</body>
+</html>
