@@ -3,37 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phantom Games - Rico 1</title>
+    <title>Phantom Games - Explore</title>
     <link rel="icon" href="../phantom_games_logo.png" type="image/png"> 
-    
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            /* Futuristic Color Palette */
+            --primary-bg: #1a1a2e; /* Very dark blue/purple */
+            --header-footer-bg: #0f0f1d; /* Even darker, near black */
+            --header-footer-text: #e0e0e0; /* Silver/light grey */
+            --content-bg: #2a2a4a; /* Deep purple/blue-grey for content cards */
+            --content-text: #c0c0e0; /* Slightly lighter silver/blue-grey for main text */
+            --accent-electric-blue: #00FFFF; /* Cyan/Electric Blue */
+            --accent-deep-purple: #8A2BE2; /* Blue Violet / Deep Purple */
+            --shadow-glow-blue: rgba(0, 255, 255, 0.3); /* Electric blue glow effect */
+            --shadow-glow-purple: rgba(138, 43, 226, 0.4); /* Deep purple glow effect */
+            --text-glow: 0 0 5px var(--accent-electric-blue), 0 0 10px var(--accent-electric-blue);
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Rajdhani', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #e0f7fa; /* Light blue background */
-            color: #263238;
+            background-color: var(--primary-bg);
+            color: var(--content-text);
             text-align: center;
-            min-height: 100vh; /* Ensures footer is at bottom on short pages */
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
+            line-height: 1.6;
         }
         header {
-            background-color: #00796b; /* Darker teal */
-            color: #fff;
-            padding: 20px 0;
+            background-color: var(--header-footer-bg);
+            color: var(--header-footer-text);
+            padding: 30px 0;
+            box-shadow: 0 2px 15px var(--shadow-glow-blue);
+            border-bottom: 1px solid rgba(0, 255, 255, 0.1);
         }
         h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.8em;
             margin-bottom: 10px;
+            text-shadow: var(--text-glow);
         }
         .container {
-            padding: 20px;
+            padding: 30px;
             max-width: 800px;
-            margin: 20px auto;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            flex-grow: 1; /* Allows container to take up available space */
+            margin: 30px auto;
+            background-color: var(--content-bg);
+            border-radius: 12px;
+            box-shadow: 0 0 20px var(--shadow-glow-purple);
+            flex-grow: 1;
+            border: 1px solid rgba(138, 43, 226, 0.1);
+        }
+        .container p {
+            color: var(--content-text);
         }
         .game-list {
             list-style: none;
@@ -41,43 +66,52 @@
             margin-top: 30px;
         }
         .game-list li {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
         .game-list a {
             display: block;
-            padding: 15px 25px; /* Slightly larger button for single game */
-            background-color: #00bcd4; /* Cyan */
-            color: #fff;
+            padding: 20px 30px;
+            background-color: var(--header-footer-bg); /* Dark background for buttons */
+            color: var(--accent-electric-blue); /* Electric blue text */
             text-decoration: none;
-            border-radius: 8px; /* Slightly more rounded */
-            transition: background-color 0.3s ease, transform 0.2s ease; /* Added transform for hover effect */
-            font-size: 1.2em; /* Larger text */
-            font-weight: bold;
+            border-radius: 10px;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease, color 0.3s ease;
+            font-size: 1.3em;
+            font-weight: 600;
+            text-shadow: var(--text-glow);
+            border: 2px solid var(--accent-electric-blue);
         }
         .game-list a:hover {
-            background-color: #0097a7; /* Darker cyan */
-            transform: translateY(-2px); /* Slight lift on hover */
+            background-color: var(--accent-electric-blue); /* Invert colors on hover */
+            color: var(--header-footer-bg);
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px var(--shadow-glow-blue), inset 0 0 10px var(--shadow-glow-blue);
+            text-shadow: none; /* Remove text glow for better contrast on light background */
         }
         .back-home {
-            margin-top: 40px; /* More space from game link */
+            margin-top: 40px;
             padding-top: 20px;
-            border-top: 1px solid #eee; /* Separator line */
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
         .back-home a {
-            color: #00796b;
+            color: var(--accent-deep-purple); /* Deep purple for back link */
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
             font-size: 1.1em;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
         }
         .back-home a:hover {
             text-decoration: underline;
+            text-shadow: 0 0 8px var(--accent-deep-purple);
+            color: var(--accent-electric-blue);
         }
         footer {
-            margin-top: auto; /* Pushes footer to the bottom */
+            margin-top: auto;
             padding: 20px 0;
-            background-color: #004d40; /* Darker teal for games footer */
-            color: #fff;
+            background-color: var(--header-footer-bg);
+            color: var(--header-footer-text);
             font-size: 0.9em;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
     </style>
 </head>
