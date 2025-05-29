@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phantom Games - Rico 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f7fa; /* Light blue background */
+            color: #263238;
+            text-align: center;
+            min-height: 100vh; /* Ensures footer is at bottom on short pages */
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            background-color: #00796b; /* Darker teal */
+            color: #fff;
+            padding: 20px 0;
+        }
+        h1 {
+            margin-bottom: 10px;
+        }
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex-grow: 1; /* Allows container to take up available space */
+        }
+        .game-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 30px;
+        }
+        .game-list li {
+            margin-bottom: 15px;
+        }
+        .game-list a {
+            display: block;
+            padding: 15px 25px; /* Slightly larger button for single game */
+            background-color: #00bcd4; /* Cyan */
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px; /* Slightly more rounded */
+            transition: background-color 0.3s ease, transform 0.2s ease; /* Added transform for hover effect */
+            font-size: 1.2em; /* Larger text */
+            font-weight: bold;
+        }
+        .game-list a:hover {
+            background-color: #0097a7; /* Darker cyan */
+            transform: translateY(-2px); /* Slight lift on hover */
+        }
+        .back-home {
+            margin-top: 40px; /* More space from game link */
+            padding-top: 20px;
+            border-top: 1px solid #eee; /* Separator line */
+        }
+        .back-home a {
+            color: #00796b;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .back-home a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            margin-top: auto; /* Pushes footer to the bottom */
+            padding: 20px 0;
+            background-color: #004d40; /* Darker teal for games footer */
+            color: #fff;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Phantom Games</h1>
+        <p>Your destination for immersive gaming experiences!</p>
+    </header>
+
+    <div class="container">
+        <p>Explore our latest release, "Rico 1" – an adventure like no other!</p>
+
+        <ul class="game-list">
+            <li><a href="#">Rico 1 - Retro Platformer</a></li>
+            </ul>
+
+        <div class="back-home">
+            <p><a href="phantom-official.github.io">Back to Phantom Homepage</a></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Phantom Games. All rights reserved.</p>
+    </footer>
+</body>
+</html>
